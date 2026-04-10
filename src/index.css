@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Manrope", sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(45, 212, 191, 0.18), transparent 28%),
+      radial-gradient(circle at top right, rgba(251, 191, 36, 0.2), transparent 30%),
+      linear-gradient(180deg, #fffdf7 0%, #f8fafc 42%, #eef2ff 100%);
+    color: #0f172a;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+
+  ::selection {
+    background-color: rgba(20, 184, 166, 0.22);
+  }
+}
+
+@layer components {
+  .expenses-grid tbody tr {
+    @apply cursor-context-menu bg-white transition hover:bg-teal-50/40;
+  }
+
+  .expenses-grid tbody td {
+    @apply px-4 py-4 sm:px-6;
+  }
+
+  .expenses-grid tbody td:first-child {
+    @apply font-semibold text-slate-900;
+  }
+
+  .expenses-grid tbody td:nth-child(2) {
+    @apply text-slate-600;
+  }
+
+  .expenses-grid tbody td:last-child {
+    @apply text-right font-semibold text-slate-900;
+  }
+
+  .expenses-grid tbody tr:last-child {
+    @apply bg-slate-900 text-white hover:bg-slate-900;
+  }
+
+  .expenses-grid tbody tr:last-child th {
+    @apply px-4 py-4 sm:px-6;
+  }
+
+  .expenses-grid tbody tr:last-child th:first-child,
+  .expenses-grid tbody tr:last-child th:last-child {
+    @apply font-semibold;
+  }
+
+  .expenses-grid tbody tr:last-child th:last-child {
+    @apply text-right;
+  }
+
+  .expenses-grid tbody tr:last-child th:nth-child(2) {
+    @apply cursor-pointer font-semibold text-teal-200 transition hover:text-white;
+  }
+}
